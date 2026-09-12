@@ -1,0 +1,1 @@
+---\nname: ✨ Feature Request\nabout: Suggest a feature for markdown-table-fixer\ntitle: '[FEAT] '\n---\n\n**Feature Details**\n

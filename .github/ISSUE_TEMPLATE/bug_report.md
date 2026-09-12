@@ -1,0 +1,1 @@
+---\nname: 🐛 Bug Report\nabout: Report an issue in markdown-table-fixer\ntitle: '[BUG] '\n---\n\n**Describe the bug**\n\n**To Reproduce**\n
