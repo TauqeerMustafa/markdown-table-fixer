@@ -2,7 +2,7 @@
 
 # 🚀 markdown-table-fixer
 
-### *📊 Smart Markdown table alignment fixer, formatter, and CSV-to-Markdown converter.*
+### *Smart Markdown table alignment fixer & CSV-to-Markdown converter.*
 
 [![CI Build Status](https://img.shields.io/github/actions/workflow/status/TauqeerMustafa/markdown-table-fixer/ci.yml?branch=main&label=CI%20Build&style=for-the-badge&logo=githubactions&logoColor=white&color=2ea44f)](https://github.com/TauqeerMustafa/markdown-table-fixer/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](LICENSE)
@@ -13,9 +13,11 @@
 <br/>
 
 <p align="center">
-  <a href="#-features">Features</a> •
+  <a href="#-why-use-markdown-table-fixer">Why markdown-table-fixer?</a> •
+  <a href="#-instant-preview">Demo</a> •
   <a href="#-quick-start">Quick Start</a> •
-  <a href="#-usage-guide">Usage Guide</a> •
+  <a href="#-architecture">Architecture</a> •
+  <a href="#-cli-reference">CLI Reference</a> •
   <a href="#-contributing">Contributing</a> •
   <a href="#-license">License</a>
 </p>
@@ -24,37 +26,67 @@
 
 ---
 
-## 📖 Overview
+## 💡 Why Use `markdown-table-fixer`?
 
-**markdown-table-fixer** is a production-grade, zero-dependency open-source developer utility built for performance, reliability, and ease of use across Windows, macOS, and Linux.
+- **Perfect Alignment**: Calculates maximum column widths and formats crisp, readable Markdown tables.
+- **CSV Conversion**: Converts raw CSV or TSV spreadsheets directly into GitHub-Flavored Markdown.
+- **Terminal Preview**: Test and inspect table rendering in the terminal before committing.
 
 ---
 
-## ✨ Features
+## 🎬 Instant Preview
 
-- ⚡ **Zero External Dependencies**: Powered entirely by the Python standard library.
-- 🛡️ **Cross-Platform & Safe**: Tested across Windows PowerShell / CMD and Linux / macOS.
-- 🤖 **Automated CI Integration**: GitHub Actions workflows included out-of-the-box.
-- 📦 **Instant Execution**: Clone and run immediately with standard CLI flags.
+```bash
+$ python markdown_table_fixer.py
+============================================================
+📊 FORMATTED GITHUB-FLAVORED MARKDOWN TABLE
+============================================================
+| Feature         | Status      | Priority |
+| --------------- | ----------- | -------- |
+| Authentication  | Completed   | High     |
+| Payment Gateway | In Progress | Critical |
+| Dark Mode       | Planned     | Medium   |
+============================================================
+```
 
 ---
 
 ## ⚡ Quick Start
 
 ```bash
-# 1. Clone repository
+# 1. Clone the repository
 git clone https://github.com/TauqeerMustafa/markdown-table-fixer.git
 cd markdown-table-fixer
 
-# 2. Run CLI tool immediately
+# 2. Run CLI tool immediately (No pip install required)
 python markdown_table_fixer.py --help
 ```
 
 ---
 
+## 🏛️ Architecture & Workflow
+
+```mermaid
+flowchart LR
+    UnevenTable["📊 Uneven Markdown / CSV Data"] --> TableFixer["⚙️ markdown_table_fixer.py"]
+    TableFixer --> WidthCalc["📏 Column Width Calculation"]
+    WidthCalc --> FormattedTable["✨ Aligned GitHub-Flavored Table"]
+```
+
+---
+
+## 💻 CLI Reference
+
+| Command | Description |
+| :--- | :--- |
+| `python markdown_table_fixer.py --help` | Display full help menu and flag options |
+| `python markdown_table_fixer.py` | Run default execution mode |
+
+---
+
 ## 🤝 Contributing
 
-Contributions, feedback, and feature suggestions are warmly welcomed!
+Contributions, feature suggestions, and pull requests are warmly welcomed!
 - Read our [Contributing Guidelines](CONTRIBUTING.md).
 - Follow our [Code of Conduct](CODE_OF_CONDUCT.md).
 
@@ -62,8 +94,8 @@ Contributions, feedback, and feature suggestions are warmly welcomed!
 
 ## 📄 License
 
-Licensed under the **MIT License**. See [`LICENSE`](LICENSE) for details.
+Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for details.
 
 <div align="center">
-  <sub>Crafted with ❤️ by <a href="https://github.com/TauqeerMustafa">Tauqeer Mustafa</a>.</sub>
+  <sub>Crafted with ❤️ for the open-source community by <a href="https://github.com/TauqeerMustafa">Tauqeer Mustafa</a>.</sub>
 </div>
