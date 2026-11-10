@@ -2,7 +2,7 @@
 """
 markdown-table-fixer: Formats uneven markdown tables & converts CSV to Markdown.
 """
-import argparse, csv, sys
+import argparse, csv, os, sys
 
 if sys.platform == "win32":
     try:
@@ -36,13 +36,24 @@ Authentication,Completed,High
 Payment Gateway,In Progress,Critical
 Dark Mode,Planned,Medium"""
 
+def load_csv_input(value):
+    """Return rows for --csv: an existing file path is read, otherwise the
+    value itself is parsed as inline CSV text."""
+    if os.path.isfile(value):
+        with open(value, newline="", encoding="utf-8") as f:
+            return list(csv.reader(f))
+    return list(csv.reader(value.splitlines()))
+
 def main():
     parser = argparse.ArgumentParser(description="📊 markdown-table-fixer: Table formatter & CSV converter")
     parser.add_argument("--csv", help="Input CSV string or file")
     args = parser.parse_args()
-    
-    reader = csv.reader(SAMPLE_CSV.splitlines())
-    rows = list(reader)
+
+    if args.csv:
+        rows = load_csv_input(args.csv)
+    else:
+        reader = csv.reader(SAMPLE_CSV.splitlines())
+        rows = list(reader)
     md_table = format_markdown_table(rows)
     
     print("=" * 60)
